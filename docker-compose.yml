@@ -26,9 +26,10 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
   nginx:
-    image: "aimelyse/nginx"
-    mem_limit: 128m
-    hostname: nginx
+    image: aimelyse/nginx:latest
+    build:
+      context:  ngnix
+      dockerfile: Dockerfile
     ports:
       - "80:80"
 volumes:
