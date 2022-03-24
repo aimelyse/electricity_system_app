@@ -3,6 +3,15 @@
 ## Author Of App 
 ### Aimelyse Moss
 
+## Setting Up Frontend App
+
+CD directory of the app
+yarn add package.json or npm i
+### Run the application
+yarn start or npm run start // for starting the application
+yarn test or npm run test // for testing the application
+
+
 ## Requirements
 
 Make sure you have your postgres db installed on your PC
