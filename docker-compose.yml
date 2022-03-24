@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  apis:
+    image: aimelyse/power_cash_apis:latest
+    tty: true
+    stdin_open: true
+    build: 
+      context: power_cash
+      dockerfile: Dockerfile
+  frontend:
+    image:  aimelyse/power_cash:latest
+    tty: true
+    stdin_open: true
+    build: 
+      context: power_cash
+      dockerfile: Dockerfile
+
+  db:
+    image: aimelyse/power_cash_db:latest
+    tty: true
+    stdin_open: true
+    build:
+      context:  apis
+      dockerfile: db.Dockerfile
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  apis:
+  frontend:
+  db:
