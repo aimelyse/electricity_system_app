@@ -14,7 +14,6 @@ services:
     build: 
       context: power_cash
       dockerfile: Dockerfile
-
   db:
     image: aimelyse/power_cash_db:latest
     tty: true
@@ -26,6 +25,12 @@ services:
       - "5432:5432"
     volumes:
       - db:/var/lib/postgresql/data
+  nginx:
+    image: "aimelyse/nginx"
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"
 volumes:
   apis:
   frontend:
