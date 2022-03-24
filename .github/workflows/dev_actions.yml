@@ -34,11 +34,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: Docker build
         run: |
-          docker build . -t aimelyse/power_cash_system
+          docker-compose build
           
       - name: Docker push
         run: |
-          docker push aimelyse/power_cash_system
+          docker-compose push
 
 
 
